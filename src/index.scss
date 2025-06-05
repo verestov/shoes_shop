@@ -100,12 +100,14 @@ header {
 			font-size: 20px;
 			font-weight: 700;
 			cursor: pointer;
+			transition: all 0.3s ease;
 		}
 
 		.sliderBtnStyle:hover {
 			border: 2px solid #a5d364;
 			background: transparent;
 			color: #a5d364;
+			transform: translateY(-5px);
 		}
 	}
 
@@ -154,6 +156,8 @@ header {
 	border-radius: 40px;
 	padding: 30px;
 	width: 210px;
+	cursor: pointer;
+	transition: all 0.3s ease;
 
 	.cardImg {
 		position: relative;
@@ -185,6 +189,11 @@ header {
 		margin: 0;
 		padding: 0;
 	}
+}
+
+.card:hover {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	transform: translateY(-10px);
 }
 
 .search-block {
