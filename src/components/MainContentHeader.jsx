@@ -1,4 +1,4 @@
-import { Input } from 'antd'
+import SearchBtn from './Shared/SearchBtn'
 
 function MainContentHeader() {
 	return (
@@ -6,7 +6,7 @@ function MainContentHeader() {
 			<div className='d-flex justify-between align-center'>
 				<h1>Все кроссовки</h1>
 				<div className='w-30'>
-					<Input.Search placeholder='Поиск' variant='filled' />
+					<SearchBtn />
 				</div>
 			</div>
 		</div>

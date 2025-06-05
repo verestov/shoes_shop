@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Logo from '../Logo'
+import Logo from '../Shared/Logo'
 import { Badge, Avatar } from 'antd'
 
 const btnStyle = {
@@ -17,12 +17,12 @@ const Header = () => {
 			<Logo />
 			<ul className='d-flex'>
 				<button className='btnStyle'>
-					<img src='/img/cart.svg' alt='' />
+					<img src='/img/cart.svg' alt='Basket' />
 					<span>1205 руб</span>
 				</button>
 				<button className='btnStyle'>
 					<div className='heart-icon'>
-						<img src='/img/heart.svg' alt='' />
+						<img src='/img/heart.svg' alt='Fav' />
 					</div>
 					<span>Закладки</span>
 				</button>

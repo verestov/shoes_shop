@@ -15,10 +15,15 @@ const ProductCart = ({ product }) => {
 					/>
 				</button>
 			</div>
-			<p>{product.title}</p>
+			<p style={{ margin: '0', padding: '0' }}>Мужские кроссовки</p>
+			<p style={{ margin: '0', padding: '0' }}>{product.title}</p>
 			<div className='d-flex justify-between align-center'>
 				<div className='d-flex flex-column'>
-					<span style={{ color: '#b6b6b6', fontWeight: '700' }}>ЦЕНА:</span>
+					<span
+						style={{ color: '#b6b6b6', fontWeight: '700', marginTop: '10px' }}
+					>
+						ЦЕНА:
+					</span>
 					<b style={{ fontSize: '16px', fontWeight: '700' }}>
 						{product.price} руб.
 					</b>
