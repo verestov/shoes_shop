@@ -32,9 +32,7 @@ const ProductCart = ({ product }) => {
 					<img
 						width={32}
 						height={32}
-						src={
-							added ? '/public/img/btn-checked.svg' : '/public/img/btn-plus.svg'
-						}
+						src={added ? '/img/btn-checked.svg' : '/img/btn-plus.svg'}
 					/>
 				</button>
 			</div>

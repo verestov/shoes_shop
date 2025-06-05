@@ -7,7 +7,7 @@ const Slider = () => {
 				<div className='slider-container'>
 					<div className='sliderLeft'>
 						<div className='sliderLogo'>
-							<img src='/public/img/logo_slider.png' alt='' />
+							<img src='/img/logo_slider.png' alt='' />
 						</div>
 						<div className='slider_p'>
 							<p style={{ color: '#A5D364' }}>Stan Smith,</p>
@@ -18,14 +18,14 @@ const Slider = () => {
 						</button>
 					</div>
 					<div className='sliderRight'>
-						<img src='/public/img/frog_slider.png' alt='' />
+						<img src='/img/frog_slider.png' alt='' />
 					</div>
 				</div>
 
 				<div className='slider-container'>
 					<div className='sliderLeft'>
 						<div className='sliderLogo'>
-							<img src='/public/img/logo_slider.png' alt='' />
+							<img src='/img/logo_slider.png' alt='' />
 						</div>
 						<div className='slider_p'>
 							<p style={{ color: '#A5D364' }}>skdjfghsdfgkjhfdsg</p>
@@ -36,14 +36,14 @@ const Slider = () => {
 						</button>
 					</div>
 					<div className='sliderRight'>
-						<img src='/public/img/frog_slider.png' alt='' />
+						<img src='/img/frog_slider.png' alt='' />
 					</div>
 				</div>
 
 				<div className='slider-container'>
 					<div className='sliderLeft'>
 						<div className='sliderLogo'>
-							<img src='/public/img/logo_slider.png' alt='' />
+							<img src='/img/logo_slider.png' alt='' />
 						</div>
 						<div className='slider_p'>
 							<p style={{ color: '#A5D364' }}>23234235</p>
@@ -54,7 +54,7 @@ const Slider = () => {
 						</button>
 					</div>
 					<div className='sliderRight'>
-						<img src='/public/img/frog_slider.png' alt='' />
+						<img src='/img/frog_slider.png' alt='' />
 					</div>
 				</div>
 			</Carousel>

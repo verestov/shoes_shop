@@ -31,7 +31,7 @@ const SearchBtn = () => {
 	return (
 		<div className='search-block'>
 			<button id='searchBtn'>
-				<img src='/public/img/search.svg' alt='search' />
+				<img src='/img/search.svg' alt='search' />
 			</button>
 			<input
 				type='text'
