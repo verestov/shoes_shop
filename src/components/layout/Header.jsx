@@ -1,25 +1,32 @@
 import { useState } from 'react'
 import Logo from '../Shared/Logo'
-import { Badge, Avatar } from 'antd'
-
-const btnStyle = {
-	direction: 'none',
-	border: 'none',
-	background: 'transparent',
-	cursor: 'pointer',
-}
+import { Badge, Avatar, Drawer } from 'antd'
 
 const Header = () => {
 	const [notification, setNotification] = useState(0)
+	const [openBasket, setOpenBasket] = useState(false)
 
 	return (
 		<header className='d-flex justify-between align-center'>
 			<Logo />
 			<ul className='d-flex'>
-				<button className='btnStyle'>
+				<button
+					className='btnStyle'
+					onClick={() => setOpenBasket(prev => !prev)}
+				>
 					<img src='/img/cart.svg' alt='Basket' />
 					<span>1205 руб</span>
 				</button>
+				<Drawer
+					title='Корзина'
+					closable={{ 'aria-label': 'Close Button' }}
+					onClose={() => setOpenBasket(prev => !prev)}
+					open={openBasket}
+				>
+					<p>Some contents...</p>
+					<p>Some contents...</p>
+					<p>Some contents...</p>
+				</Drawer>
 				<button className='btnStyle'>
 					<div className='heart-icon'>
 						<img src='/img/heart.svg' alt='Fav' />
