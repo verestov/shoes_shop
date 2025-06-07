@@ -1,14 +1,38 @@
 import React, { useState } from 'react'
+import { App, Button, Space } from 'antd'
 
 const ProductCart = ({ product }) => {
 	const [like, setLike] = useState(false)
 	const [added, setAdded] = useState(false)
 
+	const { message, notification } = App.useApp()
+
+	const showAddToBasketNotification = () => {
+		notification.info({
+			message: 'Товар добавлен в корзину!',
+			placement: 'topLeft',
+		})
+	}
+
+	const showToFavNotification = () => {
+		message.success('Добавлено в Закладки!')
+	}
+
+	const addToBasket = () => {
+		setAdded(true)
+		showAddToBasketNotification()
+	}
+
+	const addToFav = () => {
+		setLike(true)
+		showToFavNotification()
+	}
+
 	return (
 		<div className='card'>
 			<div className='cardImg'>
 				<img width={133} height={112} src={product.img} alt='' />
-				<button onClick={() => setLike(prev => !prev)}>
+				<button onClick={addToFav}>
 					<img
 						src={like ? '/img/liked.svg' : '/img/unliked.svg'}
 						alt='like button'
@@ -28,7 +52,7 @@ const ProductCart = ({ product }) => {
 						{product.price} руб.
 					</b>
 				</div>
-				<button onClick={() => setAdded(prev => !prev)}>
+				<button onClick={addToBasket}>
 					<img
 						width={32}
 						height={32}

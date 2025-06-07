@@ -62,7 +62,7 @@ export const products = [
 	{
 		id: 11,
 		img: '/img/sneakers/8.jpg',
-		title: 'Кроссовки Puma X Aka Boku Future Rider',
+		title: 'Puma X Aka Boku Future Rider',
 		price: 8999,
 	},
 	{
