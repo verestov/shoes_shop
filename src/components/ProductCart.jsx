@@ -25,6 +25,10 @@ const ProductCart = ({ product }) => {
 	const addToBasket = () => {
 		setAdded(true)
 		showAddToBasketNotification()
+
+		setTimeout(() => {
+			setAdded(false)
+		}, 5000)
 	}
 
 	const addToFav = () => {

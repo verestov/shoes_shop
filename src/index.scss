@@ -302,3 +302,35 @@ header {
 		margin-top: 10px;
 	}
 }
+
+.emptyCart {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 285px;
+	max-height: 320px;
+	margin: auto;
+	.emptyCartContent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		margin-bottom: 20px;
+
+		h3 {
+			font-size: 22px;
+			font-weight: 600;
+			padding: 0;
+		}
+		p {
+			font-size: 16px;
+			font-weight: 400;
+			color: #ccc;
+			text-align: center;
+		}
+	}
+	button {
+		margin: auto;
+	}
+}
