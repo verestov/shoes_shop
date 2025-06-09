@@ -1,23 +1,16 @@
 import { Drawer } from 'antd'
-import { products } from '../products'
 import { useEffect, useState } from 'react'
+import { useCart } from './CartContext'
 
 //FIXME: Пофиксить отображение элементов в корзине при их кол-во = 2, 3
 
-const demoProducts = [
-	products[1],
-	products[2],
-	products[3],
-	products[4],
-	// products[5],
-]
-
 const BasketDrawer = ({ openBasket, setOpenBasket }) => {
+	const { items, total, removeFromCart } = useCart()
 	const [amount, setAmount] = useState(0)
 	useEffect(() => {
-		const total = demoProducts.reduce((sum, product) => sum + product.price, 0)
+		const total = items.reduce((sum, product) => sum + product.price, 0)
 		setAmount(total)
-	}, [demoProducts])
+	}, [items])
 	return (
 		<Drawer
 			title='Корзина'
@@ -26,9 +19,8 @@ const BasketDrawer = ({ openBasket, setOpenBasket }) => {
 			open={openBasket}
 		>
 			<div className='drawer-container'>
-				{demoProducts.map(product => (
+				{items.map(product => (
 					<div className='cartItem' key={product.id}>
-						{/* {addedToBasketProduct} */}
 						<div className='cartItemContent'>
 							<img
 								width={70}
@@ -49,7 +41,7 @@ const BasketDrawer = ({ openBasket, setOpenBasket }) => {
 								</b>
 							</div>
 						</div>
-						<button>
+						<button onClick={() => removeFromCart(product.id)}>
 							<svg
 								width='32'
 								height='32'

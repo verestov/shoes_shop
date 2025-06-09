@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { App, Button, Space } from 'antd'
+import { useCart } from './CartContext'
 
 const ProductCart = ({ product }) => {
 	const [like, setLike] = useState(false)
 	const [added, setAdded] = useState(false)
+	const { addToCart, items } = useCart()
+	const isAdded = items.some(p => p.id === product.id)
 
 	const { message, notification } = App.useApp()
 
 	const showAddToBasketNotification = () => {
+		addToCart(product)
 		notification.info({
 			message: 'Товар добавлен в корзину!',
 			placement: 'topLeft',

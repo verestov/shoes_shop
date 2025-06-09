@@ -16,7 +16,7 @@ const Header = () => {
 					onClick={() => setOpenBasket(prev => !prev)}
 				>
 					<img src='/img/cart.svg' alt='Basket' />
-					<span>1205 руб</span>
+					<span>Корзина</span>
 				</button>
 
 				<BasketDrawer openBasket={openBasket} setOpenBasket={setOpenBasket} />
