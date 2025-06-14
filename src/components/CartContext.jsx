@@ -6,6 +6,22 @@ export const useCart = () => useContext(CartContext)
 
 export const CartProvider = ({ children }) => {
 	const [items, setItems] = useState([])
+	const [orders, setOrders] = useState([])
+
+	const placeOrder = () => {
+		if (items.length === 0) return
+
+		const orderTotal = items.reduce((sum, p) => sum + p.price, 0)
+		setOrders(prev => [
+			...prev,
+			{
+				id: Date.now(),
+				items,
+				total: orderTotal,
+			},
+		])
+		clearCart()
+	}
 
 	const addToCart = product => {
 		if (!items.find(item => item.id === product.id)) {
@@ -23,7 +39,15 @@ export const CartProvider = ({ children }) => {
 
 	return (
 		<CartContext.Provider
-			value={{ items, addToCart, removeFromCart, clearCart, total }}
+			value={{
+				items,
+				addToCart,
+				removeFromCart,
+				clearCart,
+				total,
+				orders,
+				placeOrder,
+			}}
 		>
 			{children}
 		</CartContext.Provider>

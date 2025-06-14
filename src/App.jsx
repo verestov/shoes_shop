@@ -1,12 +1,17 @@
-import Header from './components/layout/Header'
-import MainContent from './components/layout/MainContent'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MainPage from './components/layout/MainPage'
+import AccountPage from './components/layout/AccountPage'
+import FavPage from './components/layout/FavPage'
 
 function App() {
 	return (
-		<div className='wrapper clear'>
-			<Header />
-			<MainContent />
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path='/' element={<MainPage />} />
+				<Route path='/account' element={<AccountPage />} />
+				<Route path='/favorites' element={<FavPage />} />
+			</Routes>
+		</BrowserRouter>
 	)
 }
 

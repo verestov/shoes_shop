@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { App, Button, Space } from 'antd'
+import { useState } from 'react'
+import { App } from 'antd'
 import { useCart } from './CartContext'
 
 const ProductCart = ({ product }) => {

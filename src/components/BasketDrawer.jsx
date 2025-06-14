@@ -1,16 +1,12 @@
 import { Drawer } from 'antd'
 import { useEffect, useState } from 'react'
 import { useCart } from './CartContext'
+import { Link } from 'react-router-dom'
 
 //FIXME: Пофиксить отображение элементов в корзине при их кол-во = 2, 3
 
 const BasketDrawer = ({ openBasket, setOpenBasket }) => {
-	const { items, removeFromCart } = useCart()
-	const [amount, setAmount] = useState(0)
-	useEffect(() => {
-		const total = items.reduce((sum, product) => sum + product.price, 0)
-		setAmount(total)
-	}, [items])
+	const { items, removeFromCart, placeOrder, total } = useCart()
 	return (
 		<Drawer
 			title='Корзина'
@@ -39,7 +35,7 @@ const BasketDrawer = ({ openBasket, setOpenBasket }) => {
 						</button>
 					</div>
 				) : (
-					<>
+					<div className='d-flex flex-column'>
 						{items.map(product => (
 							<div className='cartItem' key={product.id}>
 								<div className='cartItemContent'>
@@ -94,18 +90,22 @@ const BasketDrawer = ({ openBasket, setOpenBasket }) => {
 							<div className='amountInfo'>
 								<p>Итого:</p>
 								<p>
-									<b>{amount} руб.</b>
+									<b>{total} руб.</b>
 								</p>
 							</div>
 							<div className='amountInfo'>
 								<p>Налог 5%:</p>
 								<p>
-									<b>{((amount * 5) / 100).toFixed(2)} руб.</b>
+									<b>{((total * 5) / 100).toFixed(2)} руб.</b>
 								</p>
 							</div>
-							<button className='sliderBtnStyle'>Оформить заказ </button>
+							<Link to='/account'>
+								<button className='sliderBtnStyle' onClick={placeOrder}>
+									Оформить заказ{' '}
+								</button>
+							</Link>
 						</div>
-					</>
+					</div>
 				)}
 			</div>
 		</Drawer>

@@ -56,11 +56,6 @@ header {
 
 .btnStyle:hover {
 	border-bottom: 1px solid #000;
-
-	// .heart-icon img {
-	// 	filter: invert(33%) sepia(93%) saturate(397%) hue-rotate(323deg)
-	// 		brightness(100%) contrast(101%);
-	// }
 }
 
 .slider-container {
@@ -332,5 +327,90 @@ header {
 	}
 	button {
 		margin: auto;
+	}
+}
+
+.contentAccount {
+	padding: 140px 80px 140px 80px;
+}
+
+.emptyCartAccount {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: 290px;
+	.emptyCartContentAccount {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 40px;
+	}
+}
+
+.accountButton {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	border: 2px solid #a5d364;
+	border-radius: 18px;
+	background: #a5d364;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	p {
+		margin: 0;
+		padding: 0 0 0 10px;
+	}
+}
+
+.accountButton:hover {
+	border: 2px solid #a5d364;
+	background: transparent;
+	color: #a5d364;
+	transform: translateY(-5px);
+}
+
+.accountPageHeader {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin: 0;
+	padding: 0;
+	gap: 20px;
+
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		color: #ccc;
+		padding: 8px;
+		cursor: pointer;
+	}
+}
+
+.accountOrders {
+	display: flex;
+	flex-direction: column;
+	margin: 20px 0 0 0;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	h2 {
+		margin: 0;
+	}
+	h3 {
+		margin: 0;
+	}
+	.accountItems {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px 0 20px 0;
 	}
 }
