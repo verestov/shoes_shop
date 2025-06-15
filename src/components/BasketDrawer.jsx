@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import { useCart } from './CartContext'
 import { Link } from 'react-router-dom'
 
-//FIXME: Пофиксить отображение элементов в корзине при их кол-во = 2, 3
-
 const BasketDrawer = ({ openBasket, setOpenBasket }) => {
 	const { items, removeFromCart, placeOrder, total } = useCart()
 	return (

@@ -5,7 +5,7 @@ import { useCart } from './CartContext'
 const ProductCart = ({ product }) => {
 	const [like, setLike] = useState(false)
 	const [added, setAdded] = useState(false)
-	const { addToCart, items } = useCart()
+	const { addToCart, items, addToFavorite } = useCart()
 	const isAdded = items.some(p => p.id === product.id)
 
 	const { message, notification } = App.useApp()
@@ -32,6 +32,7 @@ const ProductCart = ({ product }) => {
 	}
 
 	const addToFav = () => {
+		addToFavorite(product)
 		setLike(true)
 		showToFavNotification()
 	}

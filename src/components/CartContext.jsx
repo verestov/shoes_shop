@@ -7,6 +7,13 @@ export const useCart = () => useContext(CartContext)
 export const CartProvider = ({ children }) => {
 	const [items, setItems] = useState([])
 	const [orders, setOrders] = useState([])
+	const [favorites, setFavorites] = useState([])
+
+	const addToFavorite = product => {
+		if (!favorites.find(item => item.id === product.id)) {
+			setFavorites(prev => [...prev, product])
+		}
+	}
 
 	const placeOrder = () => {
 		if (items.length === 0) return
@@ -44,9 +51,11 @@ export const CartProvider = ({ children }) => {
 				addToCart,
 				removeFromCart,
 				clearCart,
+				addToFavorite,
+				placeOrder,
 				total,
 				orders,
-				placeOrder,
+				favorites,
 			}}
 		>
 			{children}
