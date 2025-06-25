@@ -5,13 +5,12 @@ const allItems = products
 	.filter(product => typeof product.title === 'string')
 	.map(product => product.title)
 
-const SearchBtn = () => {
-	const [query, setQuery] = useState('')
+const SearchBtn = ({ query, onQueryChange }) => {
 	const [suggestions, setSuggestions] = useState([])
 
 	const handleInput = e => {
 		const value = e.target.value
-		setQuery(value)
+		onQueryChange(value) // Передаем значение в родительский компонент
 
 		if (value.trim() === '') {
 			setSuggestions([])
@@ -25,9 +24,10 @@ const SearchBtn = () => {
 	}
 
 	const handleSelected = item => {
-		setQuery(item)
+		onQueryChange(item) // Обновляем query в родительском компоненте
 		setSuggestions([])
 	}
+
 	return (
 		<div className='search-block'>
 			<button id='searchBtn'>

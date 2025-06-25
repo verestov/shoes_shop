@@ -1,13 +1,19 @@
+import { useState } from 'react'
 import MainContentHeader from '../MainContentHeader'
 import ProductList from '../ProductList'
 import Slider from '../Slider'
 
 const MainContent = () => {
+	const [searchQuery, setSearchQuery] = useState('')
+
 	return (
 		<div className='content'>
 			<Slider />
-			<MainContentHeader />
-			<ProductList />
+			<MainContentHeader
+				searchQuery={searchQuery}
+				setSearchQuery={setSearchQuery}
+			/>
+			<ProductList searchQuery={searchQuery} />
 		</div>
 	)
 }
